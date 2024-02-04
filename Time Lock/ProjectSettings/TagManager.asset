@@ -8,6 +8,7 @@ TagManager:
   - Right Hand Model
   - Left Hand Interactor
   - Right Hand Interactor
+  - Test
   layers:
   - Default
   - TransparentFX
