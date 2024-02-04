@@ -3,14 +3,18 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class DisableGrabbingHandModel : MonoBehaviour
 {   
-    [SerializeField] private GameObject _leftHandModel;
-    [SerializeField] private GameObject _rightHandModel;
-
+    /*
+        Ensure tags are set for hand models and interactors
+    */
+    private GameObject _leftHandModel;
+    private GameObject _rightHandModel;
     private XRGrabInteractable _grabInteractable;
 
     private void Awake()
-    {
+    {   
         _grabInteractable = GetComponent<XRGrabInteractable>();
+        _leftHandModel = GameObject.FindGameObjectWithTag("Left Hand Model");
+        _rightHandModel = GameObject.FindGameObjectWithTag("Right Hand Model");
     }
 
     private void Start()

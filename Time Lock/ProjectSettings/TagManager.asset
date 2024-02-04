@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Left Hand
-  - Right Hand
+  - Left Hand Model
+  - Right Hand Model
   - Left Hand Interactor
   - Right Hand Interactor
   layers:
