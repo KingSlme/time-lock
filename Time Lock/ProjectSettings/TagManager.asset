@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Left Hand Model
+  - Right Hand Model
+  - Left Hand Interactor
+  - Right Hand Interactor
+  - Test
   layers:
   - Default
   - TransparentFX
