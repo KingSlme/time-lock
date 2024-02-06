@@ -4,7 +4,7 @@ public class Footsteps : MonoBehaviour
 {   
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip[] _footstepSFX;
-    [SerializeField] private float _minimumRequiredDistance = 1.0f;
+    [SerializeField] private float _minimumRequiredDistance = 0.5f;
 
     private Vector2 _lastPosition; 
 
@@ -23,12 +23,7 @@ public class Footsteps : MonoBehaviour
         }
     }
 
-    private void PlayFootstep()
-    {   
-        _audioSource.clip = GetRandomAudioClip(_footstepSFX);
-        if (!_audioSource.isPlaying)
-            _audioSource.Play();
-    }
+    private void PlayFootstep() => _audioSource.PlayOneShot(GetRandomAudioClip(_footstepSFX));
 
-    private AudioClip GetRandomAudioClip(AudioClip[] audioClips) => _footstepSFX[Random.Range(0, audioClips.Length)];
+    private AudioClip GetRandomAudioClip(AudioClip[] audioClips) => audioClips[Random.Range(0, audioClips.Length)];
 }
