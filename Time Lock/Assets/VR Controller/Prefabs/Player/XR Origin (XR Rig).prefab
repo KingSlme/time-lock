@@ -2168,6 +2168,8 @@ GameObject:
   - component: {fileID: 7385734341978292977}
   - component: {fileID: 5865383597020557253}
   - component: {fileID: 1474939417382409557}
+  - component: {fileID: 6999679830893298054}
+  - component: {fileID: 1386932344749181418}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -2484,6 +2486,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6999679830893298054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4790233938890517058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5605b51e30ba91440b9f148f5c3a1dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1386932344749181418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4790233938890517058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023df8e63c549f140bfbbb7cd1f12e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 1474939417382409557}
+  _pantingSFX: {fileID: 8300000, guid: d4a485735830e5f418ed9387018dc5f9, type: 3}
+  _walkSpeed: 1
+  _sprintSpeed: 1.5
+  _maxSprintDistance: 7.5
+  _recoveryTime: 5
 --- !u!1 &4952796954370080017
 GameObject:
   m_ObjectHideFlags: 0
