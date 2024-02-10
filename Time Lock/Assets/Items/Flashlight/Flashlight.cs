@@ -20,12 +20,14 @@ public class Flashlight : MonoBehaviour
         TurnOffFlashlight();
         _grabInteractable.activated.AddListener(_ => TurnOnFlashlight());
         _grabInteractable.deactivated.AddListener(_ => TurnOffFlashlight());
+        _grabInteractable.selectExited.AddListener(_ => TurnOffFlashlight());
     }
 
     private void OnDestroy()
     {
         _grabInteractable.activated.RemoveListener(_ => TurnOnFlashlight());
         _grabInteractable.deactivated.RemoveListener(_ => TurnOffFlashlight());
+        _grabInteractable.selectExited.RemoveListener(_ => TurnOffFlashlight());
     }
 
     private void TurnOnFlashlight()
