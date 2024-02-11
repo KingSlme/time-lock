@@ -1,6 +1,6 @@
 # time-lock
 
-A virtual reality roguelike horror game made in Unity.
+A VR roguelike horror game made in Unity.
 
 ## Dependencies
 
