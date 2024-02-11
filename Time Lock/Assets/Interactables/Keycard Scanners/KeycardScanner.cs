@@ -14,28 +14,52 @@ public class KeycardScanner : MonoBehaviour
     [SerializeField] private ScannerLevelEnum _scannerLevel;
     [SerializeField] private Animator _doorAnimator;
 
+    [SerializeField] private AudioClip[] _keycardSuccessSFX;
+    [SerializeField] private AudioClip[] _keycardFailureSFX;
+    [SerializeField] private AudioClip _doorOpenSFX;
+    [SerializeField] private AudioClip _doorCloseSFX;
+
     private float _toggleDoorCooldown = 1.0f;
     private Coroutine _toggleDoorCoroutine;
+    private AudioSource _audioSource;
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.transform.parent.TryGetComponent(out Keycard keycard))
             if ((int)keycard.KeycardLevel >= (int)_scannerLevel)
-                if (_toggleDoorCoroutine == null)
-                    _toggleDoorCoroutine =  StartCoroutine(ToggleDoor());
+                _toggleDoorCoroutine ??= StartCoroutine(ToggleDoor());
+            else 
+                _audioSource.PlayOneShot(GetRandomAudioClip(_keycardFailureSFX));   
     }
 
     private IEnumerator ToggleDoor()
     {
         if (_doorAnimator.GetBool("open"))
-        {
-            _doorAnimator.SetBool("open", false);
-        }
+            CloseDoor();
         else
-        {
-            _doorAnimator.SetBool("open", true);
-        }
+            OpenDoor();
         yield return new WaitForSeconds(_toggleDoorCooldown);
         _toggleDoorCoroutine = null;
     }
+
+    private void OpenDoor()
+    {
+        _doorAnimator.SetBool("open", true);
+        _audioSource.PlayOneShot(GetRandomAudioClip(_keycardSuccessSFX));
+        _audioSource.PlayOneShot(_doorOpenSFX);
+    }
+
+    private void CloseDoor()
+    {
+        _doorAnimator.SetBool("open", false);
+        _audioSource.PlayOneShot(GetRandomAudioClip(_keycardSuccessSFX));
+        _audioSource.PlayOneShot(_doorCloseSFX);
+    }
+
+    private AudioClip GetRandomAudioClip(AudioClip[] audioClips) => audioClips[Random.Range(0, audioClips.Length)]; 
 }
