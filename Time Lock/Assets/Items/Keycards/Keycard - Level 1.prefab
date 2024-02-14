@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3487194464309154304}
   - component: {fileID: 5956325896428623647}
   - component: {fileID: 6912151344939050985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Keycard - Level 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -303,6 +303,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Keycard Orange - Collectable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268804516790664491, guid: e77c593d420678f4ba9084b907af6049,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

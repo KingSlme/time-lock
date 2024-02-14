@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8406753467149403820}
   - component: {fileID: 2735549359951771400}
   - component: {fileID: 1962793949423765343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 6384627609227274763}
   - component: {fileID: 1047368084441070888}
   - component: {fileID: 3468755832534855664}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 612840665569563533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 8205865852622783527}
   - component: {fileID: 6505698231065497143}
   - component: {fileID: 8624311190079299707}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flashlight_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3637442523846507832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attach Transform
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 2185995371299425862}
   - component: {fileID: 8533705786256005968}
   - component: {fileID: 7042720675882105184}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 3
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
