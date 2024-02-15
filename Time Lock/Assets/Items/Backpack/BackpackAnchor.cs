@@ -6,11 +6,12 @@ public class BackpackAnchor : MonoBehaviour
 
     private void Update()
     {
-        AdjustYPosition(-0.25f);
+        PositionBehind(0.25f, -0.25f);
     }
 
-    private void AdjustYPosition(float yOffset)
+    private void PositionBehind(float backOffset, float yOffset)
     {
-        transform.position = new Vector3(transform.position.x, _mainCamera.transform.position.y + yOffset, transform.position.z);
+        Vector3 behindPosition = _mainCamera.transform.TransformPoint(Vector3.back * backOffset);
+        transform.position = new Vector3(behindPosition.x, _mainCamera.transform.position.y + yOffset, behindPosition.z);
     }
 }

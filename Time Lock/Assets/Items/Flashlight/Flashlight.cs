@@ -4,6 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Flashlight : MonoBehaviour, IHolsterable
 {
     public bool Holstered { get; set; } = false;
+    public BackpackSocketHover CurrentSocket { get; set; } 
 
     [SerializeField] private Light _spotLight;
     [SerializeField] private Renderer _glassRenderer;
