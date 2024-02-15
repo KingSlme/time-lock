@@ -27,14 +27,14 @@ public class Flashlight : MonoBehaviour, IHolsterable
         TurnOffFlashlightNoSFX();
         _grabInteractable.activated.AddListener(_ => TurnOnFlashlight());
         _grabInteractable.deactivated.AddListener(_ => TurnOffFlashlight());
-        _grabInteractable.selectExited.AddListener(_ => TurnOffFlashlight());
+        _grabInteractable.selectExited.AddListener(_ => TurnOffFlashlightNoSFX());
     }
 
     private void OnDestroy()
     {
         _grabInteractable.activated.RemoveListener(_ => TurnOnFlashlight());
         _grabInteractable.deactivated.RemoveListener(_ => TurnOffFlashlight());
-        _grabInteractable.selectExited.RemoveListener(_ => TurnOffFlashlight());
+        _grabInteractable.selectExited.RemoveListener(_ => TurnOffFlashlightNoSFX());
     }
 
     private void TurnOnFlashlight()
