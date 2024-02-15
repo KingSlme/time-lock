@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class Flashlight : MonoBehaviour
+public class Flashlight : MonoBehaviour, IHolsterable
 {
+    public bool Holstered { get; set; } = false;
+
     [SerializeField] private Light _spotLight;
     [SerializeField] private Renderer _glassRenderer;
     [SerializeField] private Material _glassOnMaterial;

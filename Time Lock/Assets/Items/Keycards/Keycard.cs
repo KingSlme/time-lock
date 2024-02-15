@@ -1,7 +1,9 @@
 using UnityEngine;
 
-public class Keycard : MonoBehaviour
+public class Keycard : MonoBehaviour, IHolsterable
 {
+    public bool Holstered { get; set; } = false;
+
     public enum KeycardLevelEnum
     {
         Level1,

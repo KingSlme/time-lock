@@ -1,41 +1,40 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR.Interaction.Toolkit;
 
 public class BackpackSocketHover : MonoBehaviour
 {   
-    private Backpack _backpack;
     private RawImage _socketIndicatorRawImage;
-    private XRSocketInteractor _xrSocketInteractor;
 
     private void Awake()
     {
-        _backpack = GetComponentInParent<Backpack>();
         _socketIndicatorRawImage = GetComponentInChildren<RawImage>();
-        _xrSocketInteractor = GetComponent<XRSocketInteractor>();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Item"))
-        {
-            if (!_xrSocketInteractor.hasSelection && !_backpack.IsSocketHovered)
-            {   
-                _backpack.IsSocketHovered = true;
-                _socketIndicatorRawImage.color = Color.green;
-            }
-        }
+        if (other.gameObject.layer != LayerMask.NameToLayer("Item"))
+            return;
+        IHolsterable holsterable = other.GetComponentInParent<IHolsterable>();
+        if (holsterable == null)
+            return;
+        if (holsterable.Holstered)
+            return;
+
+        holsterable.Holstered = true;
+        _socketIndicatorRawImage.color = Color.green;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Item"))
-        {
-            if (_backpack.IsSocketHovered)
-            {
-                _backpack.IsSocketHovered = false;
-                _socketIndicatorRawImage.color = Color.white;
-            }
-        }
+        if (other.gameObject.layer != LayerMask.NameToLayer("Item"))
+            return;
+        IHolsterable holsterable = other.GetComponentInParent<IHolsterable>();
+        if (holsterable == null)
+            return;
+        if (!holsterable.Holstered)
+            return;
+            
+        holsterable.Holstered = false;
+        _socketIndicatorRawImage.color = Color.white;
     }
 }
