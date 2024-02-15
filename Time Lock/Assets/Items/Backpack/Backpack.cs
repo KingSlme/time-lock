@@ -22,7 +22,7 @@ public class Backpack : MonoBehaviour
 
     private void Start()
     {   
-        ToggleBackpackVisibility(false);
+        DeactivateBackpack();
         _grabInteractable.selectEntered.AddListener(_ => ActivateBackpack());
         _grabInteractable.selectExited.AddListener(_ => DeactivateBackpack());
     }
@@ -37,8 +37,13 @@ public class Backpack : MonoBehaviour
     {
         foreach (XRSocketInteractor xrSocketInteractor in _xrSocketInteractors)
         {   
-            if (xrSocketInteractor.GetComponentInChildren<XRGrabInteractable>() != null)
-                xrSocketInteractor.GetComponentInChildren<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Default", "Player");
+            // Ensures items can be grabbed when backpack is selected
+            XRGrabInteractable xrGrabInteractable = xrSocketInteractor.GetComponentInChildren<XRGrabInteractable>();
+            if (xrGrabInteractable != null)
+                xrGrabInteractable.interactionLayers = InteractionLayerMask.GetMask("Default", "Player");
+            // Ensures items can be holstered when backpack is selected
+            if (!xrSocketInteractor.socketActive)
+                xrSocketInteractor.socketActive = true;
         }
         ToggleBackpackVisibility(true);
     }
@@ -48,8 +53,13 @@ public class Backpack : MonoBehaviour
         StartCoroutine(ReturnToBackPosition());
         foreach (XRSocketInteractor xrSocketInteractor in _xrSocketInteractors)
         {
-            if (xrSocketInteractor.GetComponentInChildren<XRGrabInteractable>() != null)
-                xrSocketInteractor.GetComponentInChildren<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Default");
+            // Ensures items cannot be grabbed when backpack is not selected 
+            XRGrabInteractable xrGrabInteractable = xrSocketInteractor.GetComponentInChildren<XRGrabInteractable>();
+            if (xrGrabInteractable != null)
+                xrGrabInteractable.interactionLayers = InteractionLayerMask.GetMask("Default");
+            // Ensures item cannot be holstered when backpack is not selected
+            if (!xrSocketInteractor.hasSelection)
+                xrSocketInteractor.socketActive = false;
         }
         ToggleBackpackVisibility(false);
     }
