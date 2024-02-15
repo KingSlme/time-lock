@@ -3,6 +3,7 @@ using UnityEngine;
 public class Keycard : MonoBehaviour, IHolsterable
 {
     public bool Holstered { get; set; } = false;
+    public BackpackSocketHover CurrentSocket { get; set; } 
 
     public enum KeycardLevelEnum
     {
