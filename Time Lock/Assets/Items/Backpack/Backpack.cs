@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.UI;
 
 public class Backpack : MonoBehaviour
 {
@@ -9,16 +10,19 @@ public class Backpack : MonoBehaviour
     private XRSocketInteractor[] _xrSocketInteractors;
     private XRGrabInteractable _grabInteractable;
     private Rigidbody _rigidbody;
+    private MeshRenderer _meshRenderer;
 
     private void Awake()
     {
         _xrSocketInteractors = GetComponentsInChildren<XRSocketInteractor>();
         _grabInteractable = GetComponent<XRGrabInteractable>();
         _rigidbody = GetComponent<Rigidbody>();
+        _meshRenderer = GetComponentInChildren<MeshRenderer>();
     }
 
     private void Start()
     {   
+        ToggleBackpackVisibility(false);
         _grabInteractable.selectEntered.AddListener(_ => ActivateBackpack());
         _grabInteractable.selectExited.AddListener(_ => DeactivateBackpack());
     }
@@ -36,6 +40,7 @@ public class Backpack : MonoBehaviour
             if (xrSocketInteractor.GetComponentInChildren<XRGrabInteractable>() != null)
                 xrSocketInteractor.GetComponentInChildren<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Default", "Player");
         }
+        ToggleBackpackVisibility(true);
     }
 
     private void DeactivateBackpack()
@@ -46,6 +51,7 @@ public class Backpack : MonoBehaviour
             if (xrSocketInteractor.GetComponentInChildren<XRGrabInteractable>() != null)
                 xrSocketInteractor.GetComponentInChildren<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Default");
         }
+        ToggleBackpackVisibility(false);
     }
 
     private IEnumerator ReturnToBackPosition()
@@ -80,5 +86,19 @@ public class Backpack : MonoBehaviour
     {
         yield return null;
         args.interactableObject.transform.parent = null;
+    }
+
+    /// <summary>
+    /// Because camera movement can be indepdent through gazing, the backpack mesh, item meshes, and
+    /// UI raw images should be hidden when it is not selected
+    /// </summary>
+    private void ToggleBackpackVisibility(bool visible) 
+    {
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in renderers)
+            renderer.enabled = visible;
+        RawImage[] rawImages = GetComponentsInChildren<RawImage>();
+        foreach (RawImage rawImage in rawImages)
+            rawImage.enabled = visible;
     }
 }
