@@ -8,11 +8,11 @@ public class DisableGrabbingHandModel : MonoBehaviour
     */
     private GameObject _leftHandModel;
     private GameObject _rightHandModel;
-    private XRGrabInteractable _grabInteractable;
+    private UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable _grabInteractable;
 
     private void Awake()
-    {   
-        _grabInteractable = GetComponent<XRGrabInteractable>();
+    {
+        _grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable>();
         _leftHandModel = GameObject.FindGameObjectWithTag("Left Hand Model");
         _rightHandModel = GameObject.FindGameObjectWithTag("Right Hand Model");
     }

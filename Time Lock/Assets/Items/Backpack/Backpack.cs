@@ -6,8 +6,6 @@ public class Backpack : MonoBehaviour
 {
     [SerializeField] private Transform _backPosition;
 
-    public bool IsSocketHovered { get; set; } = false;
-
     private XRSocketInteractor[] _xrSocketInteractors;
     private XRGrabInteractable _grabInteractable;
     private Rigidbody _rigidbody;
