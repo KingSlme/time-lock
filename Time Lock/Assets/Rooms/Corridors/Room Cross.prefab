@@ -78,6 +78,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8112970594191663237}
   - component: {fileID: 6853602151051815350}
+  - component: {fileID: 5940207683606343681}
+  - component: {fileID: 6518563948121301738}
   m_Layer: 0
   m_Name: Lighting
   m_TagString: Untagged
@@ -118,6 +120,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minActiveLights: 1
   _inactiveLightChance: 50
+--- !u!114 &5940207683606343681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743619428367691325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4c0ae830ff66d4993ef368756d8c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeBetweenRoomFlickers: 5
+  _flickerChance: 25
+  _flickerSpeed: 0.1
+--- !u!65 &6518563948121301738
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3743619428367691325}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 5, z: 6}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &5096762073434456743
 GameObject:
   m_ObjectHideFlags: 0
