@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class LightRandomizer : MonoBehaviour
 {
-    List<Light> _lights = new List<Light>();
+    private List<Light> _lights = new List<Light>();
     [SerializeField] private int _minActiveLights;
-    [SerializeField] [Range(0, 100)] private int _inactiveLightChance;
+    [SerializeField] [Range(0, 100)] private int _inactiveLightChance = 50;
 
     private void Awake()
     {
@@ -32,11 +32,7 @@ public class LightRandomizer : MonoBehaviour
     private void DisableRandomLights(List<Light> lights, int chanceToDisable)
     {
         foreach (Light light in lights)
-        {
             if (Random.Range(0, 101) < chanceToDisable)
-            {
                 light.enabled = false;
-            }
-        }
     }
 }
