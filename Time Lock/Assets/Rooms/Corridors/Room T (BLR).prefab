@@ -77,6 +77,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3960614824298801960}
+  - component: {fileID: 6738186527945052364}
   m_Layer: 0
   m_Name: Lighting
   m_TagString: Untagged
@@ -101,6 +102,20 @@ Transform:
   - {fileID: 9147888674607559879}
   m_Father: {fileID: 8256067788082801736}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6738186527945052364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2671397543939231372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d2e2c1a79f50c489981fe262c77756, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minActiveLights: 1
+  _inactiveLightChance: 50
 --- !u!1 &2825654422811439564
 GameObject:
   m_ObjectHideFlags: 0
