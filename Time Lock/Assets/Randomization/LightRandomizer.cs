@@ -10,6 +10,8 @@ public class LightRandomizer : MonoBehaviour
     private void Awake()
     {
         _lights.AddRange(GetComponentsInChildren<Light>());
+        if (_lights.Count < _minActiveLights)
+            Debug.LogWarning($"{gameObject.name} has less light components than MinActiveLights in LightRandomizer Component!");
     }
 
     private void Start()
