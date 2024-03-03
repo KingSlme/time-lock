@@ -6,4 +6,4 @@ Explore an abandoned facility to uncover the mysteries of its collapse.
 
 ## Dependencies
 
-- ExternalPackages (Private)
+- ExternalPackages (Private Packages)
