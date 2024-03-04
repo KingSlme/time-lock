@@ -10,6 +10,7 @@ TagManager:
   - Right Hand Interactor
   - Test
   - InteractiveObject
+  - Gear
   layers:
   - Default
   - TransparentFX
