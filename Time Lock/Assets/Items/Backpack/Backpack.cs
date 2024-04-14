@@ -10,14 +10,14 @@ public class Backpack : MonoBehaviour
     private XRSocketInteractor[] _xrSocketInteractors;
     private XRGrabInteractable _grabInteractable;
     private Rigidbody _rigidbody;
-    private MeshRenderer _meshRenderer;
+    // private MeshRenderer _meshRenderer;
 
     private void Awake()
     {
         _xrSocketInteractors = GetComponentsInChildren<XRSocketInteractor>();
         _grabInteractable = GetComponent<XRGrabInteractable>();
         _rigidbody = GetComponent<Rigidbody>();
-        _meshRenderer = GetComponentInChildren<MeshRenderer>();
+        // _meshRenderer = GetComponentInChildren<MeshRenderer>();
     }
 
     private void Start()
