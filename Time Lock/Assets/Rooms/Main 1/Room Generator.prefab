@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3577428668209478581}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 2541917393856200341}
   - component: {fileID: 1627243172975154540}
   - component: {fileID: 5669609193752197907}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: A_Wall_Simple_2x4 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 7405588129598569056}
   - component: {fileID: 4469098008779780391}
   - component: {fileID: 2759703017778790550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: A_Wall_Simple_2x4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2548,7 +2548,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1939186441029469625}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Regulars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2833,7 +2833,7 @@ GameObject:
   - component: {fileID: 6399795985422110395}
   - component: {fileID: 4863903688149452563}
   - component: {fileID: 4356471050594591221}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: A_Wall_Simple_2x4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3503,7 +3503,7 @@ GameObject:
   - component: {fileID: 1255958525845347822}
   - component: {fileID: 8759763235127873204}
   - component: {fileID: 3143832043696265185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: A_Wall_Simple_2x4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5028,7 +5028,7 @@ GameObject:
   - component: {fileID: 4798965974339248644}
   - component: {fileID: 525477410267533144}
   - component: {fileID: 2359050773050356604}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: A_Wall_Niche_2x2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5979,7 +5979,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6623261313937159369}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6208,7 +6208,7 @@ GameObject:
   - component: {fileID: 2304899400526885181}
   - component: {fileID: 2871406867808440157}
   - component: {fileID: 4899616541096910227}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: A_Wall_Simple_2x4 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6314,7 +6314,7 @@ GameObject:
   - component: {fileID: 3518776791712090113}
   - component: {fileID: 7939238126857099988}
   - component: {fileID: 3162815155739587997}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: A_Wall_Simple_2x4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7032,6 +7032,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d5c16bbe9eea8f14a94330d1495d776d, type: 3}
       propertyPath: m_Name
       value: A_Corner_In_2x2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d5c16bbe9eea8f14a94330d1495d776d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d5c16bbe9eea8f14a94330d1495d776d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7789,6 +7793,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: A_Corner_In_2x2
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d5c16bbe9eea8f14a94330d1495d776d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d5c16bbe9eea8f14a94330d1495d776d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.9999998
@@ -7989,6 +7997,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: A_Corner_In_2x2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d5c16bbe9eea8f14a94330d1495d776d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d5c16bbe9eea8f14a94330d1495d776d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.999999
@@ -8051,6 +8063,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d5c16bbe9eea8f14a94330d1495d776d, type: 3}
       propertyPath: m_Name
       value: A_Corner_In_2x2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d5c16bbe9eea8f14a94330d1495d776d, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d5c16bbe9eea8f14a94330d1495d776d, type: 3}
       propertyPath: m_LocalPosition.x
