@@ -2,19 +2,24 @@ using UnityEngine;
 using System;
 using System.IO;
 
-Public class LogManager : Singleton<LogManager>
+public class LogManager : Singleton<LogManager>
 {
     private const string LOG_FILE_PATH = "log.txt";
 
-    public event Eventhandler<string> OnGameStarted;
+    public event EventHandler<string> OnGameStarted;
+
+    private string _dateTime;
+
+    private void GetDate()
+    {
+        _dateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+    }
 
     public void Log(string logMessage)
     {
-        string _dateTime = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
         Initialize();
 
-        file.AppendAllText(LOG_FILE_PATH, _dateTime + " - " + logMessage + "\n");
+        // file.AppendAllText(LOG_FILE_PATH, _dateTime + " - " + logMessage + "\n");
     }
 
     private void Initialize()
