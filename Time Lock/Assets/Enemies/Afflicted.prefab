@@ -112,7 +112,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  endReachedDistance: 0.1
+  endReachedDistance: 0.2
   whenCloseToDestination: 0
   rvoDensityBehavior:
     enabled: 1
@@ -172,6 +172,15 @@ MonoBehaviour:
   _timeOutOfSightToDeAgro: 5
   _randomPointRadius: 2
   _attackRange: 0.75
+  _attackSpeed: 1
+  _idleSounds:
+  - {fileID: 8300000, guid: 1fb0ffef842b745bda4a400b7e6914bb, type: 3}
+  - {fileID: 8300000, guid: a9bbec37959ad464d8eef0ed85262172, type: 3}
+  - {fileID: 8300000, guid: 38313662dee2340dea2d9d6d5362f42f, type: 3}
+  _attackSounds:
+  - {fileID: 8300000, guid: dd1338b991c73447a983adbc8effe3d5, type: 3}
+  - {fileID: 8300000, guid: 62fe1ae146558475b8a6c0deffb83970, type: 3}
+  - {fileID: 8300000, guid: 42d8fc3cbacf24ddfbeabbcc89fc2772, type: 3}
   _enableGizmos: 1
   _textYOffset: 1
 --- !u!1001 &923044479802741427

@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
+/// <summary>
+/// Currently disabled hover color
+/// </summary>
 public class BackpackSocketHover : MonoBehaviour
 {   
     private RawImage _socketIndicatorRawImage;
@@ -27,7 +30,7 @@ public class BackpackSocketHover : MonoBehaviour
 
         holsterable.CurrentSocket = this;
         holsterable.Holstered = true;
-        _socketIndicatorRawImage.color = Color.green;
+        // _socketIndicatorRawImage.color = Color.green;
     }
 
     private void OnTriggerExit(Collider other)
@@ -47,6 +50,6 @@ public class BackpackSocketHover : MonoBehaviour
 
         holsterable.CurrentSocket = null;
         holsterable.Holstered = false;
-        _socketIndicatorRawImage.color = Color.white;
+        // _socketIndicatorRawImage.color = Color.white;
     }
 }

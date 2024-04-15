@@ -18,7 +18,7 @@ public class LogManager : Singleton<LogManager>
         if (!File.Exists(_log_file_path))
         {
             UpdateDate();
-            File.WriteAllText(_log_file_path, $"Log file created at ${_dateTime}\n\n");
+            File.WriteAllText(_log_file_path, $"Log file created at {_dateTime}\n\n");
         }
     }
 
