@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KeycardScanner : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class KeycardScanner : MonoBehaviour
     private float _toggleDoorCooldown = 1.0f;
     private Coroutine _toggleDoorCoroutine;
     private AudioSource _audioSource;
+    private bool _firstOpen = false;
 
     private void Awake()
     {
@@ -49,6 +51,15 @@ public class KeycardScanner : MonoBehaviour
 
     private void OpenDoor()
     {
+        if (!_firstOpen)
+        {
+            HandleFirstOpen();
+        }
+        // Temporary Win State
+        if (_scannerLevel == ScannerLevelEnum.Level4)
+        {
+            SceneManager.LoadScene("Win");
+        }
         _doorAnimator.SetBool("open", true);
         _audioSource.PlayOneShot(GetRandomAudioClip(_keycardSuccessSFX));
         _audioSource.PlayOneShot(_doorOpenSFX);
@@ -61,5 +72,11 @@ public class KeycardScanner : MonoBehaviour
         _audioSource.PlayOneShot(_doorCloseSFX);
     }
 
-    private AudioClip GetRandomAudioClip(AudioClip[] audioClips) => audioClips[Random.Range(0, audioClips.Length)]; 
+    private AudioClip GetRandomAudioClip(AudioClip[] audioClips) => audioClips[Random.Range(0, audioClips.Length)];
+
+    private void HandleFirstOpen()
+    {
+        _firstOpen = true;
+        LogManager.Instance.Log($"Player opened level {_scannerLevel} door");
+    } 
 }

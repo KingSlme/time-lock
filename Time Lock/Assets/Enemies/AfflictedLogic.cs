@@ -10,6 +10,10 @@ public class AfflictedLogic : MonoBehaviour
     [SerializeField] private float _timeOutOfSightToDeAgro = 5.0f;
     [SerializeField] private float _randomPointRadius = 2.0f;
     [SerializeField] private float _attackRange = 0.75f;
+    [SerializeField] private float _attackSpeed = 1.0f;
+
+    [SerializeField] private AudioClip[] _idleSounds;
+    [SerializeField] private AudioClip[] _attackSounds;
 
     [Header("Debugging")]
     [SerializeField] private bool _enableGizmos = false;
@@ -25,6 +29,7 @@ public class AfflictedLogic : MonoBehaviour
 
     private float _timeOutOfSight = 0.0f;
     private Coroutine _randomPathCooldownCoroutine;
+    private Coroutine _attackCoroutine;
 
     private enum State
     {
@@ -42,6 +47,11 @@ public class AfflictedLogic : MonoBehaviour
         _aiPath = GetComponent<AIPath>();
         _ai = GetComponent<IAstarAI>();
         _animator = GetComponentInChildren<Animator>();
+    }
+
+    private void Start()
+    {
+        InvokeRepeating("PlayIdleSounds", 3f, 3);
     }
 
     private void Update()
@@ -73,6 +83,7 @@ public class AfflictedLogic : MonoBehaviour
                 _animator.SetBool("isIdling", false);
                 _animator.SetBool("isWalking", false);
                 _animator.SetBool("isAttacking", true);
+                _attackCoroutine ??= StartCoroutine(Attack());
                 break;
         }
     }
@@ -189,8 +200,28 @@ public class AfflictedLogic : MonoBehaviour
             _state = State.Attacking;
     }
 
-    private void Attack()
+    private IEnumerator Attack()
     {
+        yield return new WaitForSeconds(_attackSpeed);
+        if (Vector3.Distance(transform.position, _playerTransform.position) < _attackRange)
+        {
+            HealthManager.Instance.Damage(1);
+            PlayRandomAudioClip(_attackSounds);
+        }
+        _attackCoroutine = null;
+    }
 
+    private void PlayIdleSounds()
+    {
+        PlayRandomAudioClip(_idleSounds);
+    }
+
+    public void PlayRandomAudioClip(AudioClip[] audioClips)
+    {
+        if (audioClips.Length > 0)
+        {
+            int randomIndex = Random.Range(0, audioClips.Length);
+            AudioSource.PlayClipAtPoint(audioClips[randomIndex], transform.position, 0.1f);
+        }
     }
 }

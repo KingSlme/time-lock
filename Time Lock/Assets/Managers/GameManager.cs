@@ -9,27 +9,45 @@ using System.Linq;
 public class GameManager : Singleton<GameManager>
 {
     private List<int> _sceneIndices;
-    private int _lastSceneIndex; 
+    private int _lastSceneIndex;
 
-    private void Start()
+    protected override void Awake()
     {
-        LogManager.Instance.Log("Game instance started");
+        base.Awake();
         PopulateSceneIndices();
-        GoToRandomScene();
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            GoToRandomScene();
-        }
+        LogManager.Instance.Log("Game instance started");
     }
 
     private void OnApplicationQuit()
     {
         LogManager.Instance.Log("Game instance closed\n");
     }
+
+    // private void GoToRandomScene()
+    // {   
+    //     int randomListIndex = Random.Range(0, _sceneIndices.Count);
+        
+    //     if (_sceneIndices.Count > 0)
+    //     {
+    //         int randomSceneIndex = _sceneIndices[randomListIndex]; 
+    //         if (randomSceneIndex != _lastSceneIndex)
+    //         {
+    //             _sceneIndices.RemoveAt(randomListIndex);
+    //             LogManager.Instance.Log($"Entering scene {randomSceneIndex}");
+    //             SceneManager.LoadScene(randomSceneIndex);
+    //             _lastSceneIndex = randomSceneIndex;
+    //         }
+    //         else
+    //         {
+    //             GoToRandomScene();
+    //         }
+    //     }
+    //     else
+    //     {
+    //         PopulateSceneIndices();
+    //         GoToRandomScene();
+    //     }
+    // }
 
     private void GoToRandomScene()
     {   
@@ -47,21 +65,38 @@ public class GameManager : Singleton<GameManager>
             }
             else
             {
-                PopulateSceneIndices();
-                GoToRandomScene();
+                if (_sceneIndices.Count == 1)
+                {
+                    PopulateSceneIndices(); // Repopulate if only one scene left
+                }
+                else
+                {
+                    GoToRandomScene(); // Recursive call
+                }
             }
         }
         else
         {
-            PopulateSceneIndices();
-            GoToRandomScene();
+            PopulateSceneIndices(); // Repopulate if _sceneIndices is empty
+            GoToRandomScene(); // Recursive call
         }
     }
+
 
     private void PopulateSceneIndices()
     {
         int sceneCount = SceneManager.sceneCountInBuildSettings;
-        int lastSceneIndex = sceneCount - 1;
+        int lastSceneIndex = sceneCount - 1 - 1; // Temp -1 to not include Win scene
         _sceneIndices = new List<int>(Enumerable.Range(1, lastSceneIndex)); // Don't include 'Start' scene index
+        
+    }
+
+    public void RestartGame()
+    {
+        LogManager.Instance.Log("Restarting game");
+        HealthManager.Instance.ResetHealth();
+        // GoToRandomScene();
+        // temp restart
+        SceneManager.LoadScene("1");
     }
 }
