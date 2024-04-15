@@ -1,34 +1,36 @@
 using UnityEngine;
-using System;
 using System.IO;
 
 public class LogManager : Singleton<LogManager>
 {
-    private const string LOG_FILE_PATH = "log.txt";
-
-    public event EventHandler<string> OnGameStarted;
+    private string _log_file_path = Application.dataPath + "/log.txt";
 
     private string _dateTime;
 
-    private void GetDate()
+    protected override void Awake()
     {
-        _dateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-    }
-
-    public void Log(string logMessage)
-    {
+        base.Awake();
         Initialize();
-
-        // file.AppendAllText(LOG_FILE_PATH, _dateTime + " - " + logMessage + "\n");
     }
 
     private void Initialize()
     {
-        if (!File.Exists(LOG_FILE_PATH))
+        if (!File.Exists(_log_file_path))
         {
-            File.WriteAllText(LOG_FILE_PATH, "Log file created at " + _dateTime + "\n\n");
+            UpdateDate();
+            File.WriteAllText(_log_file_path, "Log file created at " + _dateTime + "\n\n");
         }
     }
 
+    private void UpdateDate()
+    {
+        _dateTime = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+    }
+
+    public void Log(string logMessage)
+    {
+        UpdateDate();
+        File.AppendAllText(_log_file_path, _dateTime + " - " + logMessage + "\n");
+    }
 
 }
