@@ -1,0 +1,12 @@
+Log file created at 2024-04-17 10:43:05
+
+2024-04-17 10:43:05 - Game instance started
+2024-04-17 10:43:05 - Restarting game
+2024-04-17 10:43:09 - Game instance closed
+
+2024-04-17 10:44:35 - Game instance started
+2024-04-17 10:44:35 - Restarting game
+2024-04-17 10:45:22 - Player opened level Level1 door
+2024-04-17 10:46:31 - Restarting game
+2024-04-17 10:46:41 - Game instance closed
+
