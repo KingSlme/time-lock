@@ -2,8 +2,8 @@ using TMPro;
 
 public class HealthManager : Singleton<HealthManager>
 {
-    private int _maxHealth = 10;
-    private int _currentHealth;
+    private float _maxHealth = 5;
+    private float _currentHealth;
 
     private TextMeshProUGUI _healthText;
 
@@ -30,6 +30,16 @@ public class HealthManager : Singleton<HealthManager>
     public void Damage(int amount)
     {
         _currentHealth -= amount;
+    }
+
+    public float GetMaxHealth()
+    {
+        return _maxHealth;
+    }
+
+    public float GetCurrentHealth()
+    {
+        return _currentHealth;
     }
 
     public void ResetHealth()
