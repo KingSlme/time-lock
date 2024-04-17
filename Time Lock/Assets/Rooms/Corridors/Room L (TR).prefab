@@ -99,7 +99,6 @@ Transform:
   m_Children:
   - {fileID: 3404729840008299752}
   - {fileID: 2960701525551221813}
-  - {fileID: 5792109303968649390}
   m_Father: {fileID: 8275830693227022278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3341542160984314371
@@ -148,7 +147,7 @@ GameObject:
   - component: {fileID: 3416873864823510152}
   - component: {fileID: 6970077423378779442}
   - component: {fileID: 1599766292582858107}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: Lighting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,13 +162,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3367895822053013481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6227721424534277773}
-  m_Father: {fileID: 9106145864055402}
+  m_Father: {fileID: 8275830693227022278}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3416873864823510152
 MonoBehaviour:
@@ -355,6 +354,7 @@ Transform:
   - {fileID: 2040551426827761293}
   - {fileID: 6023400782966232078}
   - {fileID: 9106145864055402}
+  - {fileID: 5792109303968649390}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8202416217204369703
@@ -1236,15 +1236,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 3b4c4824e4476934caca4a98d4120c1f, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 3b4c4824e4476934caca4a98d4120c1f, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 3b4c4824e4476934caca4a98d4120c1f, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 3b4c4824e4476934caca4a98d4120c1f, type: 3}
       propertyPath: m_Name
@@ -1252,7 +1252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 3b4c4824e4476934caca4a98d4120c1f, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 3b4c4824e4476934caca4a98d4120c1f, type: 3}
       propertyPath: m_LocalPosition.x
