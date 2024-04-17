@@ -709,6 +709,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Afflicted (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 701880085532505781, guid: aea5a520789e87a47b62f42610ab5874,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2890958974498034517, guid: aea5a520789e87a47b62f42610ab5874,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3094,11 +3099,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin (XR Rig)
       objectReference: {fileID: 0}
-    - target: {fileID: 4790233938890517058, guid: 5792cc30d219cdc4d988a8c5b594d8e5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3345,6 +3345,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Afflicted
       objectReference: {fileID: 0}
+    - target: {fileID: 701880085532505781, guid: aea5a520789e87a47b62f42610ab5874,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2890958974498034517, guid: aea5a520789e87a47b62f42610ab5874,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3412,6 +3417,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Afflicted (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 701880085532505781, guid: aea5a520789e87a47b62f42610ab5874,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2890958974498034517, guid: aea5a520789e87a47b62f42610ab5874,
         type: 3}

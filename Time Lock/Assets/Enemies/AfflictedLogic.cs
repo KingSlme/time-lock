@@ -179,7 +179,8 @@ public class AfflictedLogic : MonoBehaviour
     private bool PlayerInSight()
     {
         Vector3 directionToPlayer = _playerTransform.position - transform.position;
-        if (Physics.Raycast(transform.position, directionToPlayer, out RaycastHit hit, Mathf.Infinity, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
+
+        if (Physics.Raycast(transform.position, directionToPlayer, out RaycastHit hit, Mathf.Infinity))
         {
             if (hit.collider.gameObject.CompareTag(_playerTag))
             {

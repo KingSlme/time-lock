@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da26496dae0d9e45bb612d5f186ac2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTag: Target
+  _playerTag: Player
   _timeOutOfSightToDeAgro: 5
   _randomPointRadius: 2
   _attackRange: 0.75

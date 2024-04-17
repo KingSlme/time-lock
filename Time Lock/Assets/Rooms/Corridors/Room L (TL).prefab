@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3976271750773392888}
   - component: {fileID: 5053158051663542947}
   - component: {fileID: 4541255752282430150}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Lighting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,9 +718,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2631745916729441937}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3b4c4824e4476934caca4a98d4120c1f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 3b4c4824e4476934caca4a98d4120c1f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 3b4c4824e4476934caca4a98d4120c1f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 3b4c4824e4476934caca4a98d4120c1f, type: 3}
       propertyPath: m_Name
       value: Light_Universal
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 3b4c4824e4476934caca4a98d4120c1f, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 3b4c4824e4476934caca4a98d4120c1f, type: 3}
       propertyPath: m_LocalPosition.x

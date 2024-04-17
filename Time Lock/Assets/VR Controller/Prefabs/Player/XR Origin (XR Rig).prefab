@@ -1896,7 +1896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1454329926275244063}
-  - component: {fileID: 8503124360431443553}
+  - component: {fileID: 7568895285498731675}
   - component: {fileID: 772954490376094867}
   m_Layer: 0
   m_Name: Player Hitbox
@@ -1914,14 +1914,14 @@ Transform:
   m_GameObject: {fileID: 4400946768727568757}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 970688384859715685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &8503124360431443553
-CapsuleCollider:
+--- !u!135 &7568895285498731675
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1938,11 +1938,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &772954490376094867
 Rigidbody:
   m_ObjectHideFlags: 0
