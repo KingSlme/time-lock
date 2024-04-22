@@ -11235,7 +11235,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.3372549, g: 0.8, b: 0.91764706, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 0.2
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -18407,8 +18407,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
-  m_Range: 3
+  m_Intensity: 1
+  m_Range: 6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -19297,8 +19297,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
-  m_Range: 3
+  m_Intensity: 1
+  m_Range: 6
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -22804,7 +22804,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.3372549, g: 0.8, b: 0.91764706, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 0.2
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -29329,7 +29329,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6120317453480947194}
@@ -50743,17 +50743,17 @@ PrefabInstance:
     - target: {fileID: 1442647356312914334, guid: 830c815b0a228a84e8765431a63ba4fb,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.333333
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1442647356312914334, guid: 830c815b0a228a84e8765431a63ba4fb,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.333333
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1442647356312914334, guid: 830c815b0a228a84e8765431a63ba4fb,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.333333
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1442647356312914334, guid: 830c815b0a228a84e8765431a63ba4fb,
         type: 3}
@@ -50916,17 +50916,17 @@ PrefabInstance:
     - target: {fileID: 6781449072238645582, guid: 0bfaacb3ea452c24ebccc94bc50e3109,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6781449072238645582, guid: 0bfaacb3ea452c24ebccc94bc50e3109,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6781449072238645582, guid: 0bfaacb3ea452c24ebccc94bc50e3109,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6781449072238645582, guid: 0bfaacb3ea452c24ebccc94bc50e3109,
         type: 3}

@@ -1,7 +1,7 @@
 public class HealthManager : Singleton<HealthManager>
 {
-    private float _maxHealth = 5;
-    private float _currentHealth;
+    private float _maxHealth = 5.0f;
+    private float _currentHealth = 5.0f;
 
     private void Start()
     {

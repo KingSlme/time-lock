@@ -94,7 +94,6 @@ public class GameManager : Singleton<GameManager>
         int sceneCount = SceneManager.sceneCountInBuildSettings;
         int lastSceneIndex = sceneCount - 1 - 1; // Temp -1 to not include Win scene
         _sceneIndices = new List<int>(Enumerable.Range(1, lastSceneIndex)); // Don't include 'Start' scene index
-        
     }
 
     public void RestartGame()
@@ -104,5 +103,11 @@ public class GameManager : Singleton<GameManager>
         // GoToRandomScene();
         // temp restart
         SceneManager.LoadScene("1");
+    }
+
+    public void WinGame()
+    {
+        LogManager.Instance.Log("Player has won");
+        SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
     }
 }
