@@ -6,6 +6,7 @@ using UnityEditor;
 public class AfflictedLogic : MonoBehaviour
 {
     [Header("Settings")]
+    [SerializeField] Transform _eyes;
     [SerializeField] private string _playerTag = "Player";
     [SerializeField] private float _timeOutOfSightToDeAgro = 5.0f;
     [SerializeField] private float _randomPointRadius = 2.0f;
@@ -98,7 +99,7 @@ public class AfflictedLogic : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _attackRange);
         Gizmos.color = Color.white;
         Vector3 textPosition = new Vector3(transform.position.x, transform.position.y + _textYOffset, transform.position.z);
-#if UNITY_Editor
+// #if UNITY_Editor
         switch (_state)
         {
             case State.RandomMovement:
@@ -111,7 +112,7 @@ public class AfflictedLogic : MonoBehaviour
                 Handles.Label(textPosition, "State: Attacking");
                 break;
         }
-#endif
+// #endif
     }
 
     private void MoveToRandomPoint()
@@ -180,9 +181,9 @@ public class AfflictedLogic : MonoBehaviour
 
     private bool PlayerInSight()
     {
-        Vector3 directionToPlayer = _playerTransform.position - transform.position;
+        Vector3 directionToPlayer = _playerTransform.position - _eyes.transform.position;
 
-        if (Physics.Raycast(transform.position, directionToPlayer, out RaycastHit hit, Mathf.Infinity))
+        if (Physics.Raycast(_eyes.transform.position, directionToPlayer, out RaycastHit hit, Mathf.Infinity))
         {
             if (hit.collider.gameObject.CompareTag(_playerTag))
             {

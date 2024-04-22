@@ -19,9 +19,6 @@ public class DamageEffect : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
-            HealthManager.Instance.Damage(1.0f);
-        }
         if (HealthManager.Instance.GetMissingHealthPercent() > 0.0f)
             SetVignette(GetVignetteValue());
     }
