@@ -18,6 +18,12 @@ public class GameManager : Singleton<GameManager>
         LogManager.Instance.Log("Game instance started");
     }
 
+    private void Update()
+    {
+        if (HealthManager.Instance.GetCurrentHealth() <= 0.0f)
+            RestartGame();
+    }
+
     private void OnApplicationQuit()
     {
         LogManager.Instance.Log("Game instance closed\n");

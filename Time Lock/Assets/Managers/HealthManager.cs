@@ -1,33 +1,14 @@
-using TMPro;
-
 public class HealthManager : Singleton<HealthManager>
 {
     private float _maxHealth = 5;
     private float _currentHealth;
-
-    private TextMeshProUGUI _healthText;
-
-    protected override void Awake()
-    {
-        base.Awake();
-        _healthText = GetComponentInChildren<TextMeshProUGUI>();
-    }
 
     private void Start()
     {
         ResetHealth();
     }
 
-    private void Update()
-    {
-        _healthText.text = $"{_currentHealth}/{_maxHealth}";
-        if (_currentHealth <= 0)
-        {
-            GameManager.Instance.RestartGame();
-        }
-    }
-
-    public void Damage(int amount)
+    public void Damage(float amount)
     {
         _currentHealth -= amount;
     }
@@ -40,6 +21,11 @@ public class HealthManager : Singleton<HealthManager>
     public float GetCurrentHealth()
     {
         return _currentHealth;
+    }
+
+    public float GetMissingHealthPercent()
+    {
+        return 100 - (_currentHealth / _maxHealth * 100);
     }
 
     public void ResetHealth()

@@ -98,6 +98,7 @@ public class AfflictedLogic : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _attackRange);
         Gizmos.color = Color.white;
         Vector3 textPosition = new Vector3(transform.position.x, transform.position.y + _textYOffset, transform.position.z);
+#if UNITY_Editor
         switch (_state)
         {
             case State.RandomMovement:
@@ -110,6 +111,7 @@ public class AfflictedLogic : MonoBehaviour
                 Handles.Label(textPosition, "State: Attacking");
                 break;
         }
+#endif
     }
 
     private void MoveToRandomPoint()
@@ -206,7 +208,7 @@ public class AfflictedLogic : MonoBehaviour
         yield return new WaitForSeconds(_attackSpeed);
         if (Vector3.Distance(transform.position, _playerTransform.position) < _attackRange)
         {
-            HealthManager.Instance.Damage(1);
+            HealthManager.Instance.Damage(1.0f);
             PlayRandomAudioClip(_attackSounds);
         }
         _attackCoroutine = null;

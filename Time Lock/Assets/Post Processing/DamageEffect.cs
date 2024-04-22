@@ -19,25 +19,16 @@ public class DamageEffect : MonoBehaviour
 
     private void Update()
     {
-        if (HealthManager.Instance.GetCurrentHealth() < 5)
-            SetVignette(GetMissingHealthPercent());
+        if (Input.GetMouseButtonDown(0)) {
+            HealthManager.Instance.Damage(1.0f);
+        }
+        if (HealthManager.Instance.GetMissingHealthPercent() > 0.0f)
+            SetVignette(GetVignetteValue());
     }
 
-    private float GetMissingHealthPercent()
+    private float GetVignetteValue()
     {
-        // float currentHealth = HealthManager.Instance.GetCurrentHealth();
-        // float maxHealth = HealthManager.Instance.GetMaxHealth();
-    
-        // float missingHealthPercent = (maxHealth - currentHealth) / maxHealth * 100.0f;
-        // return missingHealthPercent;
-        if (HealthManager.Instance.GetCurrentHealth() == 4.0f)
-            return 0.1f;
-        if (HealthManager.Instance.GetCurrentHealth() == 3.0f)
-            return 0.2f;
-        if (HealthManager.Instance.GetCurrentHealth() == 2.0f)
-            return 0.3f;
-        else
-            return 0.4f;
+        return (HealthManager.Instance.GetMissingHealthPercent() / 20.0f) * 0.1f + 0.1f;
     }
 
     private void SetVignette(float intensity)
