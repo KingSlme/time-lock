@@ -100,9 +100,9 @@ public class GameManager : Singleton<GameManager>
     {
         LogManager.Instance.Log("Restarting game");
         HealthManager.Instance.ResetHealth();
-        // GoToRandomScene();
+        GoToRandomScene();
         // temp restart
-        SceneManager.LoadScene("1");
+        // SceneManager.LoadScene("1");
     }
 
     public void WinGame()

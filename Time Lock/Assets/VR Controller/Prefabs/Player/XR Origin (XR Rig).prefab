@@ -2438,7 +2438,7 @@ CharacterController:
   m_Height: 1
   m_Radius: 0.1
   m_SlopeLimit: 45
-  m_StepOffset: 0.01
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.5, z: 0}
@@ -2641,8 +2641,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 1474939417382409557}
   _pantingSFX: {fileID: 8300000, guid: d4a485735830e5f418ed9387018dc5f9, type: 3}
-  _walkSpeed: 1
-  _sprintSpeed: 1.5
+  _walkSpeed: 2
+  _sprintSpeed: 3
   _maxSprintDistance: 7.5
   _recoveryTime: 5
 --- !u!1 &4952796954370080017
